@@ -5,7 +5,7 @@ namespace TicTacToeTests
 {
     public class ProgramTests
     {
-         [Test]
+        [Test]
         public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
             string lower = null;
@@ -26,6 +26,12 @@ namespace TicTacToeTests
             string lower = "l";
             string upper = "L";
             Assert.AreEqual(Program.FirstLetterToUpper(lower), upper);
+        }
+        [Test]
+        public void FirstLetterToUpper_Valid_StrEmpty_ReturnEmpty()
+        {
+            string lower = "";
+            Assert.AreEqual(Program.FirstLetterToUpper(lower), "");
         }
     }
 }
