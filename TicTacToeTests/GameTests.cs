@@ -1,11 +1,19 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 using TicTacToe;
 
 namespace TicTacToeTests
 {
-    [TestClass]
-    public class GameTests
+    class GameTests
     {
-        
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void TestMethod()
+        {
+         
+        }
     }
 }
