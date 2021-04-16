@@ -13,6 +13,7 @@ namespace TicTacToe
 {
     static class Program
     {
+
         private const Player InitialPlayer = Player.PlayerNull;
         public static Random Random { get; set; }
 
