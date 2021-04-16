@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using TicTacToe;
 
-namespace TicTacToeTests2
+namespace TicTacToeTests
 {
     public class ProgramTests
     {
