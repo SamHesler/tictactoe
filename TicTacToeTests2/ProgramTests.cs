@@ -11,14 +11,14 @@ namespace TicTacToeTests2
         }
 
         [Test]
-        public void Program_FirstLetterToUpper_1stif()
+        public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
             string lower = null;
             Assert.AreEqual(Program.FirstLetterToUpper(lower), null);
         }
 
         [Test]
-        public void Program_FirstLetterToUpper_2ndif()
+        public void FirstLetterToUpper_Valid_StrLenGreaterThan1_ReturnCorrect()
         {
             string lower = "lower";
             string upper = "Lower";
@@ -26,7 +26,7 @@ namespace TicTacToeTests2
         }
 
         [Test]
-        public void Program_FirstLetterToUpper_else()
+        public void FirstLetterToUpper_Valid_StrLenIsOne_ReturnCorrect()
         {
             string lower = "l";
             string upper = "L";
