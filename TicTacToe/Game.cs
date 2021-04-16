@@ -8,6 +8,7 @@ using System.Windows.Forms;
 
 namespace TicTacToe
 {
+
     public enum Player
     {
         PlayerNull = 0, // field not played/unspecified player
