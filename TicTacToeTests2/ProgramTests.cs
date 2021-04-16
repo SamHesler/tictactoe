@@ -5,12 +5,7 @@ namespace TicTacToeTests2
 {
     public class ProgramTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
-        [Test]
+         [Test]
         public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
             string lower = null;
