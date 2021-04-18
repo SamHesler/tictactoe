@@ -22,6 +22,11 @@ namespace TicTacToe
         /// </summary>
         static void Main()
         {
+            MainCodeContents();
+        }
+
+        internal static bool MainCodeContents()
+        {
             Program.Random = new Random();
 
             Application.EnableVisualStyles();
@@ -39,7 +44,11 @@ namespace TicTacToe
 
             // show form
             Application.Run(gameWindow);
+            return true;
         }
+
+
+
         /// <summary>
         /// Helper function, thanks https://stackoverflow.com/a/4135491
         /// </summary>
