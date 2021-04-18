@@ -20,7 +20,7 @@ namespace TicTacToe
         /// <summary>
         /// The main entry got the application
         /// </summary>
-        static void Main()
+        public static void Main()
         {
             Program.Random = new Random();
 
