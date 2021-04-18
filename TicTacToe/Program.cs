@@ -22,15 +22,6 @@ namespace TicTacToe
         /// </summary>
         static void Main()
         {
-            MainCodeContents();
-        }
-
-        /// <summary>
-        /// Extracted code from Main so that it can be tested
-        /// </summary>
-        /// <returns></returns>
-        internal static bool MainCodeContents()
-        {
             Program.Random = new Random();
 
             Application.EnableVisualStyles();
@@ -48,7 +39,6 @@ namespace TicTacToe
 
             // show form
             Application.Run(gameWindow);
-            return true;
         }
 
         /// <summary>
