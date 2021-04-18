@@ -25,6 +25,10 @@ namespace TicTacToe
             MainCodeContents();
         }
 
+        /// <summary>
+        /// Extracted code from Main so that it can be tested
+        /// </summary>
+        /// <returns></returns>
         internal static bool MainCodeContents()
         {
             Program.Random = new Random();
@@ -46,8 +50,6 @@ namespace TicTacToe
             Application.Run(gameWindow);
             return true;
         }
-
-
 
         /// <summary>
         /// Helper function, thanks https://stackoverflow.com/a/4135491
