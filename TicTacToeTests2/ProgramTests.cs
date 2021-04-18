@@ -33,5 +33,51 @@ namespace TicTacToeTests
             string lower = "";
             Assert.AreEqual(Program.FirstLetterToUpper(lower), "");
         }
+
+
+        /*UNIT TEST ON ReplaceLastOccurrence
+         */
+
+        [Test]
+        public void ReplaceLastOccurrence_Source_find_notmatch_Return_minusone()
+        {
+            
+            string Source_test = "hello team";
+            string Find_test = "all";
+            string Replace_test = "great";
+            
+            Assert.AreEqual(Program.ReplaceLastOccurrence(Source_test, Find_test, Replace_test), Source_test);
+
+        }
+
+
+        [Test]
+
+        public void ReplaceLastOccurrence_Source_find_match_ReturnReplaced_string()
+        {
+           
+            string Source_test = "hello team hope you are good";
+            string Find_test = "good";
+            string Replace_test = "great";
+            string Final_string_replaced = "hello team hope you are great";
+            Assert.AreEqual(Program.ReplaceLastOccurrence(Source_test, Find_test, Replace_test), Final_string_replaced);
+
+        }
+
+
+
+
+
+
+
+
     }
+
+
+
+
 }
+
+
+
+
