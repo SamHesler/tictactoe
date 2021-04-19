@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using TicTacToe;
 
 namespace TicTacToeTests
@@ -75,13 +76,14 @@ namespace TicTacToeTests
         }
         */
 
-
-
-
-
-
-
-
+       
+       [Test]
+       public void Random_Valid_SetsCorrectlyAndGetsCorrectly()
+       {
+            Random rand = new Random();
+            Program.Random = rand;
+            Assert.AreEqual(Program.Random, rand);
+       }
 
 
     }
