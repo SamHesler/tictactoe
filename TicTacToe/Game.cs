@@ -152,7 +152,7 @@ namespace TicTacToe
         /// 
         /// In case of a stalemate it returns "PlayerNull" as the winner.
         /// </summary>
-        private GameResult GetGameResult()
+        public GameResult GetGameResult()
         {
             int numLines = this.Field.GetLength(1);
             int numColumns = this.Field.GetLength(0);
