@@ -6,6 +6,7 @@ namespace TicTacToeTests
 {
     public class ProgramTests
     {
+        //FirstLetterToUpper Tests
         [Test]
         public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
@@ -28,6 +29,7 @@ namespace TicTacToeTests
             string upper = "L";
             Assert.AreEqual(Program.FirstLetterToUpper(lower), upper);
         }
+
         [Test]
         public void FirstLetterToUpper_Valid_StrEmpty_ReturnEmpty()
         {
@@ -35,10 +37,7 @@ namespace TicTacToeTests
             Assert.AreEqual(Program.FirstLetterToUpper(lower), "");
         }
 
-
-        /*UNIT TEST ON ReplaceLastOccurrence
-         */
-
+        //ReplaceLastOccurrence Tests
         [Test]
         public void ReplaceLastOccurrence_Source_find_notmatch_Return_minusone()
         {
@@ -51,9 +50,7 @@ namespace TicTacToeTests
 
         }
 
-
         [Test]
-
         public void ReplaceLastOccurrence_Source_find_match_ReturnReplaced_string()
         {
            
@@ -65,18 +62,7 @@ namespace TicTacToeTests
 
         }
 
-        /*
-        public void ReplaceLastOccurrence_EmptyString_Check()
-        {
-            string Source_test = " ";
-            string Find_test = " ";
-            string Replace_test = " ";
-            Assert.AreEqual(Program.ReplaceLastOccurrence(Source_test, Find_test, Replace_test), Source_test);
-
-        }
-        */
-
-       
+       //Random (Variable) Test
        [Test]
        public void Random_Valid_SetsCorrectlyAndGetsCorrectly()
        {
