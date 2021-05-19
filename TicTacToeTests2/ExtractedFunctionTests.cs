@@ -65,6 +65,18 @@ namespace TicTacToeTests
         }
 
         [Test]
+        public void TestColumnsForWinner_PlayerNull_Should_Pass()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO }
+            };
+            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestColumnsForWinner(Player.PlayerNull, Field, 3, 0));
+        }
+
+        [Test]
         public void TestColumnsForWinner_PlayerX_Should_Fail()
         {
             Player[,] Field = new Player[,]
@@ -89,6 +101,18 @@ namespace TicTacToeTests
         }
 
         [Test]
+        public void TestRowsForWinner_PlayerNull_Should_Pass()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO }
+            };
+            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestRowsForWinner(Player.PlayerNull, Field, 3, 0));
+        }
+
+        [Test]
         public void TestRowsForWinner_PlayerX_Should_Fail()
         {
             Player[,] Field = new Player[,]
@@ -98,6 +122,32 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
             Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerX, Field, 3, 0));
+        }
+
+        [Test]
+        public void CanSelectPictureHelper_PlayerO_Should_Be_False()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO }
+            };
+            int[] position = new int[] { 0, 0, 0 };
+            Assert.IsFalse(ExtractedFunctions.CanSelectPictureHelper(Field, position));
+        }
+
+        [Test]
+        public void CanSelectPictureHelper_PlayerNull_Should_Be_True()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerNull, Player.PlayerNull, Player.PlayerNull },
+                { Player.PlayerNull, Player.PlayerNull, Player.PlayerNull },
+                { Player.PlayerNull, Player.PlayerNull, Player.PlayerNull }
+            };
+            int[] position = new int[] { 0, 0, 0 };
+            Assert.IsTrue(ExtractedFunctions.CanSelectPictureHelper(Field, position));
         }
 
 

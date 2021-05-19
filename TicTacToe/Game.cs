@@ -84,6 +84,10 @@ namespace TicTacToe
             return lastColElem;
         }
 
+        public static bool CanSelectPictureHelper(Player[,] Field, int[] pos)
+        {
+            return (Field[pos[0], pos[1]] == Player.PlayerNull);
+        }
     }
 
     public enum Player
@@ -137,7 +141,7 @@ namespace TicTacToe
         public bool CanSelectPicture(int[] pos)
         {
             // only allow clicks on PlayerNull fields
-            return (this.Field[pos[0], pos[1]] == Player.PlayerNull);
+            return (ExtractedFunctions.CanSelectPictureHelper(this.Field, pos));
         }
 
         /// <summary>
