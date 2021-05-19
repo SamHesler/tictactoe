@@ -28,6 +28,24 @@ namespace TicTacToe
             return result;
         }
 
+        public static Player SwitchPlayer_SelectPlayer(Player CurrentPlayer)
+        {
+            if (CurrentPlayer == Player.PlayerO)
+            {
+                CurrentPlayer = Player.PlayerX;
+            }
+            else if (CurrentPlayer == Player.PlayerX)
+            {
+                CurrentPlayer = Player.PlayerO;
+            }
+            else
+            {
+                throw new InvalidOperationException("player state invalid");
+            }
+
+            return CurrentPlayer;
+        }
+
     }
 
     public enum Player
@@ -39,7 +57,7 @@ namespace TicTacToe
 
     public class Game
     {
-        public Player CurrentPlayer { get; protected set; }
+        public Player CurrentPlayer { get; set; }
 
         private Player[,] Field = new Player[3, 3];
         private GameForm gameWindow;
@@ -103,18 +121,7 @@ namespace TicTacToe
 
         public void SwitchPlayer()
         {
-            if (this.CurrentPlayer == Player.PlayerO)
-            {
-                this.CurrentPlayer = Player.PlayerX;
-            }
-            else if (this.CurrentPlayer == Player.PlayerX)
-            {
-                this.CurrentPlayer = Player.PlayerO;
-            }
-            else
-            {
-                throw new InvalidOperationException("player state invalid");
-            }
+            this.CurrentPlayer = ExtractedFunctions.SwitchPlayer_SelectPlayer(this.CurrentPlayer);
 
             // also change GUI state
             this.gameWindow.SetPlayerState(this.CurrentPlayer);

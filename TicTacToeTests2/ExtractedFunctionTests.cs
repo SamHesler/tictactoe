@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 using TicTacToe;
 
 namespace TicTacToeTests
@@ -20,5 +21,37 @@ namespace TicTacToeTests
             //Todo see if game result can be parsed
             Assert.True(true);
         }
+
+        [Test]
+        public void SwitchPlayer_SelectPlayerO_Should_Pass()
+        {
+            Player testPlayer = ExtractedFunctions.SwitchPlayer_SelectPlayer(Player.PlayerO);
+            //O should switch to X
+            Assert.AreEqual(testPlayer.ToString(), Player.PlayerX.ToString());
+        }
+
+        [Test]
+        public void SwitchPlayer_SelectPlayerX_Should_Pass()
+        {
+            Player testPlayer = ExtractedFunctions.SwitchPlayer_SelectPlayer(Player.PlayerX);
+            //X should switch to O
+            Assert.AreEqual(testPlayer.ToString(), Player.PlayerO.ToString());
+        }
+
+        [Test]
+        public void SwitchPlayer_SelectPlayerInvalid_Should_Fail()
+        {
+            try
+            {
+                Player testPlayer = ExtractedFunctions.SwitchPlayer_SelectPlayer(Player.PlayerNull);
+                //If it doesn't fail with exception, fail test
+                Assert.Fail();
+            }
+            catch(Exception e) { }
+            //Exception was caught, pass test
+            Assert.Pass();
+        }
+
+
     }
 }
