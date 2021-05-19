@@ -59,7 +59,7 @@ namespace TicTacToe
     {
         public Player CurrentPlayer { get; set; }
 
-        private Player[,] Field = new Player[3, 3];
+        public Player[,] Field = new Player[3, 3];
         private GameForm gameWindow;
         private int gameFieldsMax;
         public int GameFieldsUsed { get; protected set; }
