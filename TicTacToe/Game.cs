@@ -46,8 +46,11 @@ namespace TicTacToe
             return CurrentPlayer;
         }
 
-        public static Player TestColumnsForWinner(Player lastLineElem, Player[,] Field, int numColumns, int line)
+        public static Player TestColumnsForWinner(Player lastLineElem, Player[,] Field, int numColumns, int line, int numLines)
         {
+
+            Debug.WriteLine("testing line {0} of {1}", line, numLines - 1);
+
             for (int column = 0; column < numColumns; column++)
             {
                 Player currElement = Field[column, line];
@@ -65,8 +68,10 @@ namespace TicTacToe
             return lastLineElem;
         }
 
-        public static Player TestRowsForWinner(Player lastColElem, Player[,] Field, int numLines, int column)
+        public static Player TestRowsForWinner(Player lastColElem, Player[,] Field, int numLines, int column, int numColumns)
         {
+            Debug.WriteLine("testing column {0} of {1}", column, numColumns - 1);
+
             for (int line = 0; line < numLines; line++)
             {
                 Player currElement = Field[column, line];
@@ -235,9 +240,7 @@ namespace TicTacToe
                 // new line
                 lastLineElem = this.Field[0, line];
 
-                Debug.WriteLine("testing line {0} of {1}", line, numLines-1);
-
-                lastLineElem = ExtractedFunctions.TestColumnsForWinner(lastLineElem, this.Field, numColumns, line);
+                lastLineElem = ExtractedFunctions.TestColumnsForWinner(lastLineElem, this.Field, numColumns, line, numLines);
 
                 // if we are at the end and we found no different value in line, someone won
                 if (lastLineElem != Player.PlayerNull)
@@ -259,9 +262,7 @@ namespace TicTacToe
                 // new line
                 lastColElem = this.Field[column, 0];
 
-                Debug.WriteLine("testing column {0} of {1}", column, numColumns-1);
-
-                lastColElem = ExtractedFunctions.TestRowsForWinner(lastColElem, this.Field, numLines, column);
+                lastColElem = ExtractedFunctions.TestRowsForWinner(lastColElem, this.Field, numLines, column, numColumns);
 
                 // if we are at the end and we found no different value in column, someone won
                 if (lastColElem != Player.PlayerNull)

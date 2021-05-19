@@ -61,7 +61,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreEqual(Player.PlayerO, ExtractedFunctions.TestColumnsForWinner(Player.PlayerO, Field, 3, 0));
+            Assert.AreEqual(Player.PlayerO, ExtractedFunctions.TestColumnsForWinner(Player.PlayerO, Field, 3, 0, 3));
         }
 
         [Test]
@@ -73,7 +73,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestColumnsForWinner(Player.PlayerNull, Field, 3, 0));
+            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestColumnsForWinner(Player.PlayerNull, Field, 3, 0, 3));
         }
 
         [Test]
@@ -85,7 +85,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestColumnsForWinner(Player.PlayerX, Field, 3, 0));
+            Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestColumnsForWinner(Player.PlayerX, Field, 3, 0, 3));
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerO, Field, 3, 0));
+            Assert.AreEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerO, Field, 3, 0, 3));
         }
 
         [Test]
@@ -109,7 +109,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestRowsForWinner(Player.PlayerNull, Field, 3, 0));
+            Assert.AreEqual(Player.PlayerNull, ExtractedFunctions.TestRowsForWinner(Player.PlayerNull, Field, 3, 0, 3));
         }
 
         [Test]
@@ -121,7 +121,7 @@ namespace TicTacToeTests
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO },
                 { Player.PlayerO, Player.PlayerO, Player.PlayerO }
             };
-            Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerX, Field, 3, 0));
+            Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerX, Field, 3, 0, 3));
         }
 
         [Test]
