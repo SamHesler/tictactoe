@@ -13,6 +13,23 @@ using System.Windows.Forms;
 namespace TicTacToe
 {
 
+    public static class ExtractedFunctions
+    {
+        public static int something = 0;
+
+        public static Game.GameResult CheckWinner(Player lastDia2Elem, Game.GameResult result, int winner)
+        {
+            if (lastDia2Elem != Player.PlayerNull)
+            {
+                Debug.WriteLine("SUCCESS: found result in diagonal " + winner);
+                result.Winner = lastDia2Elem;
+                result.Diagonal = winner;
+            }
+            return result;
+        }
+
+    }
+
     public enum Player
     {
         PlayerNull = 0, // field not played/unspecified player
@@ -249,12 +266,7 @@ namespace TicTacToe
             }
 
             // if we are at the end and we found no different value in dia, someone won
-            if (lastDia1Elem != Player.PlayerNull)
-            {
-                Debug.WriteLine("SUCCESS: found result in diagonal 1");
-                result.Winner = lastDia1Elem;
-                result.Diagonal = 1;
-            }
+            result = ExtractedFunctions.CheckWinner(lastDia1Elem, result, 1);
 
             // this time we start from upper right, so first element is this...
             Player lastDia2Elem = this.Field[2, 0];
@@ -278,12 +290,7 @@ namespace TicTacToe
             }
 
             // if we are at the end and we found no different value in dia, someone won
-            if (lastDia2Elem != Player.PlayerNull)
-            {
-                Debug.WriteLine("SUCCESS: found result in diagonal 2");
-                result.Winner = lastDia2Elem;
-                result.Diagonal = 2;
-            }
+            result =  ExtractedFunctions.CheckWinner(lastDia2Elem, result, 2);
 
             // if we found no other winner, check whether all fields are full
             if (result.Winner == null && (GameFieldsUsed == gameFieldsMax))
