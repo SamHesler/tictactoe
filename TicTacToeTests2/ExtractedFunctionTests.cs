@@ -76,6 +76,30 @@ namespace TicTacToeTests
             Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestColumnsForWinner(Player.PlayerX, Field, 3, 0));
         }
 
+        [Test]
+        public void TestRowsForWinner_PlayerO_Should_Pass()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO }
+            };
+            Assert.AreEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerO, Field, 3, 0));
+        }
+
+        [Test]
+        public void TestRowsForWinner_PlayerX_Should_Fail()
+        {
+            Player[,] Field = new Player[,]
+            {
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO },
+                { Player.PlayerO, Player.PlayerO, Player.PlayerO }
+            };
+            Assert.AreNotEqual(Player.PlayerO, ExtractedFunctions.TestRowsForWinner(Player.PlayerX, Field, 3, 0));
+        }
+
 
     }
 }

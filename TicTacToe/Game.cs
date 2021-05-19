@@ -65,6 +65,25 @@ namespace TicTacToe
             return lastLineElem;
         }
 
+        public static Player TestRowsForWinner(Player lastColElem, Player[,] Field, int numLines, int column)
+        {
+            for (int line = 0; line < numLines; line++)
+            {
+                Player currElement = Field[column, line];
+                Debug.WriteLine("CheckGameResult: column {0}, line {1} = {2}", column, line, currElement);
+
+                // break loop if no marked column can be found
+                if (currElement == Player.PlayerNull || currElement != lastColElem)
+                {
+                    // nullify last line element to indicate break
+                    lastColElem = Player.PlayerNull;
+                    break;
+                }
+            }
+
+            return lastColElem;
+        }
+
     }
 
     public enum Player
@@ -237,19 +256,8 @@ namespace TicTacToe
                 lastColElem = this.Field[column, 0];
 
                 Debug.WriteLine("testing column {0} of {1}", column, numColumns-1);
-                for (int line = 0; line < numLines; line++)
-                {
-                    Player currElement = this.Field[column, line];
-                    Debug.WriteLine("CheckGameResult: column {0}, line {1} = {2}", column, line, currElement);
 
-                    // break loop if no marked column can be found
-                    if (currElement == Player.PlayerNull || currElement != lastColElem)
-                    {
-                        // nullify last line element to indicate break
-                        lastColElem = Player.PlayerNull;
-                        break;
-                    }
-                }
+                lastColElem = ExtractedFunctions.TestRowsForWinner(lastColElem, this.Field, numLines, column);
 
                 // if we are at the end and we found no different value in column, someone won
                 if (lastColElem != Player.PlayerNull)
