@@ -238,9 +238,8 @@ namespace TicTacToe
             for (int line = 0; line < numLines; line++)
             {
                 // new line
-                lastLineElem = this.Field[0, line];
-
-                lastLineElem = ExtractedFunctions.TestColumnsForWinner(lastLineElem, this.Field, numColumns, line, numLines);
+                
+                lastLineElem = ExtractedFunctions.TestColumnsForWinner(this.Field[0, line], this.Field, numColumns, line, numLines);
 
                 // if we are at the end and we found no different value in line, someone won
                 if (lastLineElem != Player.PlayerNull)
@@ -260,9 +259,8 @@ namespace TicTacToe
             for (int column = 0; column < numColumns; column++)
             {
                 // new line
-                lastColElem = this.Field[column, 0];
-
-                lastColElem = ExtractedFunctions.TestRowsForWinner(lastColElem, this.Field, numLines, column, numColumns);
+                
+                lastColElem = ExtractedFunctions.TestRowsForWinner(this.Field[column, 0], this.Field, numLines, column, numColumns);
 
                 // if we are at the end and we found no different value in column, someone won
                 if (lastColElem != Player.PlayerNull)
