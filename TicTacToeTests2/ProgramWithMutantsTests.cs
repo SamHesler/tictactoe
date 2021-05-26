@@ -8,14 +8,14 @@ namespace TicTacToeTests
     {
         //FirstLetterToUpper Tests
         [Test]
-        public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
+        public void Mutant_FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
             string lower = null;
             Assert.AreEqual(ProgramWithMutants.FirstLetterToUpper(lower), null);
         }
 
         [Test]
-        public void FirstLetterToUpper_Valid_StrLenGreaterThan1_ReturnCorrect()
+        public void Mutant_FirstLetterToUpper_Valid_StrLenGreaterThan1_ReturnCorrect()
         {
             string lower = "lower";
             string upper = "Lower";
@@ -23,7 +23,7 @@ namespace TicTacToeTests
         }
 
         [Test]
-        public void FirstLetterToUpper_Valid_StrLenIsOne_ReturnCorrect()
+        public void Mutant_FirstLetterToUpper_Valid_StrLenIsOne_ReturnCorrect()
         {
             string lower = "l";
             string upper = "L";
@@ -31,7 +31,7 @@ namespace TicTacToeTests
         }
 
         [Test]
-        public void FirstLetterToUpper_Valid_StrEmpty_ReturnEmpty()
+        public void Mutant_FirstLetterToUpper_Valid_StrEmpty_ReturnEmpty()
         {
             string lower = "";
             Assert.AreEqual(ProgramWithMutants.FirstLetterToUpper(lower), "");
@@ -39,7 +39,7 @@ namespace TicTacToeTests
 
         //ReplaceLastOccurrence Tests
         [Test]
-        public void ReplaceLastOccurrence_Source_find_notmatch_Return_minusone()
+        public void Mutant_ReplaceLastOccurrence_Source_find_notmatch_Return_minusone()
         {
             
             string Source_test = "hello team";
@@ -51,7 +51,7 @@ namespace TicTacToeTests
         }
 
         [Test]
-        public void ReplaceLastOccurrence_Source_find_match_ReturnReplaced_string()
+        public void Mutant_ReplaceLastOccurrence_Source_find_match_ReturnReplaced_string()
         {
            
             string Source_test = "hello team hope you are good";
