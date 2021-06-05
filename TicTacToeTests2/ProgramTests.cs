@@ -6,15 +6,18 @@ namespace TicTacToeTests
 {
     public class ProgramTests
     {
-        //FirstLetterToUpper Tests
-        [Test]
+        /* FirstLetterToUpper Tests */
+
+        
+        [Test] //Ensure that when given a null paramenter the function returns null
         public void FirstLetterToUpper_Valid_ParamNull_ReturnNull()
         {
             string lower = null;
             Assert.AreEqual(Program.FirstLetterToUpper(lower), null);
         }
 
-        [Test]
+        [Test] //Ensure that when given a string of length greater than 1 the function returns that same string,
+               //but with the first letter capitalized
         public void FirstLetterToUpper_Valid_StrLenGreaterThan1_ReturnCorrect()
         {
             string lower = "lower";
@@ -22,7 +25,7 @@ namespace TicTacToeTests
             Assert.AreEqual(Program.FirstLetterToUpper(lower), upper);
         }
 
-        [Test]
+        [Test] //Ensure that when given a string of lenght 1 the funtion returns that same string in all caps
         public void FirstLetterToUpper_Valid_StrLenIsOne_ReturnCorrect()
         {
             string lower = "l";
@@ -30,15 +33,18 @@ namespace TicTacToeTests
             Assert.AreEqual(Program.FirstLetterToUpper(lower), upper);
         }
 
-        [Test]
+        [Test] //Ensure that when given an empty string the function returns an empty string
         public void FirstLetterToUpper_Valid_StrEmpty_ReturnEmpty()
         {
             string lower = "";
             Assert.AreEqual(Program.FirstLetterToUpper(lower), "");
         }
 
-        //ReplaceLastOccurrence Tests
-        [Test]
+        /* ReplaceLastOccurrence Tests */
+
+
+        [Test] //Ensure that when looking for a 'Find' string that is not located within the 'Source'
+               //string the source string is returned unchanged
         public void ReplaceLastOccurrence_Source_find_notmatch_Return_minusone()
         {
             
@@ -50,7 +56,7 @@ namespace TicTacToeTests
 
         }
 
-        [Test]
+        [Test] //Ensure that the 'Find' string is appropratly replaced with the 'Replace' string within the 'Source' string
         public void ReplaceLastOccurrence_Source_find_match_ReturnReplaced_string()
         {
            
@@ -62,8 +68,10 @@ namespace TicTacToeTests
 
         }
 
-       //Random (Variable) Test
-       [Test]
+       /* Random (Variable) Test */
+
+
+       [Test] //Ensure that the Random variable is being appropratly set
        public void Random_Valid_SetsCorrectlyAndGetsCorrectly()
        {
             Random rand = new Random();

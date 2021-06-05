@@ -5,7 +5,9 @@ namespace TicTacToeTests
 {
     class GameTests
     {
-        //GameResult Tests
+        /* GameResult Tests */
+
+
         [Test]
         public void GameResults_Valid_WinnerGetSet()
         {
